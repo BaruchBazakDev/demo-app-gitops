@@ -1,0 +1,11 @@
+architecture: replicaset
+replicaCount: 3
+auth:
+  enabled: true
+  rootPassword: pass
+  rootUser: root
+  databases: ["employees"]
+  usernames: ["dev"]
+  passwords: ["1234Baruch"]
+persistence:
+  enabled: true
