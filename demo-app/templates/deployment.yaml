@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deployment
+  labels:
+    app: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replicaCount | default 3 }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: {{ .Release.Name }}
+        image: 644435390668.dkr.ecr.eu-central-1.amazonaws.com/demo-app-baruch:latest
+        ports:
+        - containerPort: 5000
+        envFrom:
+        - secretRef:
+            name: {{ .Release.Name }}-secret
+        resources:
+        {{- with .Values.resources }} #checks if there is request
+          requests:
+            cpu: {{ .cpu | default "100m" | quote }}
+            memory: {{ .memory | default "50Mi" | quote }}
+        {{- end }}
+        {{- if .Values.resources.limits -}} #checks if there limit
+          limits:
+            cpu: {{ .Values.resources.limits.cpu | default "200m" | quote }}
+            memory: {{ .Values.resources.limits.memory | default "100Mi" | quote }}
+        {{ else }}
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        {{- end -}}
