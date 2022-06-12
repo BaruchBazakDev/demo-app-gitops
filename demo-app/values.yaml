@@ -8,7 +8,7 @@ image:
   repository: 644435390668.dkr.ecr.eu-central-1.amazonaws.com/demo-app-baruch
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.2"
+  tag: "1.0.3"
 
 imagePullSecrets: []
 nameOverride: ""
