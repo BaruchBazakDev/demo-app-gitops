@@ -83,5 +83,5 @@ affinity: {}
 
 secrets:
   mongodbUri: "mongo-mongodb-0.mongo-mongodb-headless"
-  mongodbUserName: "dev"
-  mongodbPass: "1234Baruch"
+  mongodbUserName: "root"
+  mongodbPass: "pass"
