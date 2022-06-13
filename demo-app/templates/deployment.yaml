@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: {{ .Release.Name }}
-        image: 644435390668.dkr.ecr.eu-central-1.amazonaws.com/demo-app-baruch:latest
+        image: 644435390668.dkr.ecr.eu-central-1.amazonaws.com/demo-app-baruch:{{ .Values.image.tag }}
         ports:
         - containerPort: 5000
         envFrom:
