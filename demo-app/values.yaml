@@ -83,12 +83,12 @@ tolerations: []
 affinity: {}
 
 secrets:
-  mongodbUri: "mongo-mongodb-0.mongo-mongodb-headless"
+  mongodbUri: "mongo-0.mongo-headless"
   mongodbUserName: "root"
   mongodbPass: "pass"
 
 mongodb:
-  nameOverride: "mongo"
+  fullnameOverride: "mongo"
   architecture: replicaset
   replicaCount: 3
   auth:
