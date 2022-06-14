@@ -8,7 +8,7 @@ image:
   repository: 644435390668.dkr.ecr.eu-central-1.amazonaws.com/demo-app-baruch
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.6"
+  tag: "1.0.7"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -41,7 +41,7 @@ service:
   port: 80
 
 ingress:
-  enabled: false
+  enabled: enable
   className: ""
   annotations: {}
     # kubernetes.io/ingress.class: nginx
