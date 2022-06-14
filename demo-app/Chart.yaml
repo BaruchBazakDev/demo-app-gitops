@@ -27,6 +27,6 @@ dependencies:
 - name: mongodb
   version: "12.1.19"
   repository: "https://charts.bitnami.com/bitnami"
-- name: nginx-ingress-controller
+- name: nginx
   version: "1.2.1"
   repository: "https://charts.bitnami.com/bitnami"
